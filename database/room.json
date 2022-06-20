@@ -1,0 +1,26 @@
+{
+    "accounts": [
+      {
+        "_id": "admin",
+        "_name": "ADMIN",
+        "_email": "admin@gmail.com",
+        "_passWord": "admin",
+        "_role": 1
+      },
+      {
+        "_id": "ziufyd9gx38",
+        "_name": "Duong",
+        "_email": "email",
+        "_passWord": "123",
+        "_role": 2
+      },
+      {
+        "_id": "ziufyd9gx37",
+        "_name": "Duong",
+        "_email": "duongdo@gmail.com",
+        "_passWord": "123",
+        "_role": 2
+      }
+    ]
+  }
+  

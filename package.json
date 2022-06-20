@@ -1,0 +1,21 @@
+{
+  "name": "case_study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.43",
+    "@types/readline-sync": "^1.4.4"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.21",
+    "readline-sync": "^1.4.10"
+  }
+}
