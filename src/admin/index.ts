@@ -1,3 +1,7 @@
+import { RunRoom } from "./room/index";
+import * as readline from "readline-sync";
+const room = new RunRoom();
+
 export class RunAdmin {
   menu(): void {
     console.log(`
@@ -8,5 +12,16 @@ export class RunAdmin {
     ================================================================================================================================
     `);
   }
-    
+  action() {
+    let choice = -1;
+    do {
+      this.menu();
+      choice = +readline.question("Nhap lua chon cua ban:");
+      switch (choice) {
+        case 1:
+          room.action();
+          break;
+      }
+    } while (choice != 0);
+  }
 }

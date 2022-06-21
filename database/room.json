@@ -1,26 +1,8 @@
 {
-    "accounts": [
-      {
-        "_id": "admin",
-        "_name": "ADMIN",
-        "_email": "admin@gmail.com",
-        "_passWord": "admin",
-        "_role": 1
-      },
-      {
-        "_id": "ziufyd9gx38",
-        "_name": "Duong",
-        "_email": "email",
-        "_passWord": "123",
-        "_role": 2
-      },
-      {
-        "_id": "ziufyd9gx37",
-        "_name": "Duong",
-        "_email": "duongdo@gmail.com",
-        "_passWord": "123",
-        "_role": 2
-      }
-    ]
-  }
-  
+  "rooms": [
+    { "_id": "ziufyd9ab3", "_name": "phòng IT" },
+    { "_id": "ziufyd9cdf4", "_name": "phòng Marketing" },
+    { "_id": "ziufyd9deg5", "_name": "phòng nhân sự" },
+    { "_id": "1syf9p9shg2", "_name": "room update" }
+  ]
+}

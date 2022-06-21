@@ -20,6 +20,13 @@
       "_email": "duongdo@gmail.com",
       "_passWord": "123",
       "_role": 2
+    },
+    {
+      "_id": "6h8w58loatr",
+      "_name": "Duongg",
+      "_email": "email@gmail.com",
+      "_passWord": "1",
+      "_role": 2
     }
   ]
 }

@@ -1,3 +1,5 @@
+import * as readline from "readline-sync";
+
 export class RunUser {
   menu(): void {
     console.log(`
@@ -7,5 +9,18 @@ export class RunUser {
     ||                                                    3. Cập nhật tài khoản                                                     ||
     ==================================================================================================================================
     `);
+  }
+  action() {
+    let choice = -1;
+    do {
+      this.menu();
+      choice = +readline.question("Nhap lua chon cua ban:");
+      switch (choice) {
+        case 1:
+          console.log("Thông tin tài khoản");
+
+          break;
+      }
+    } while (choice != 0);
   }
 }

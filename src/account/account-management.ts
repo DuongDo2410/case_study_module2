@@ -57,8 +57,8 @@ export class AccountManagement {
       console.log("ko có tk");
       return false;
     }
-    console.log(account);
-    if (email === account.email && passWord === account.passWord) {
+    // console.log(account._email);
+    if (email === account._email && passWord === account._passWord) {
       return account;
     }
     // console.log("sai email hoặc password");
@@ -79,17 +79,17 @@ export class AccountManagement {
   }
   findAccountByEmail(email: string): any {
     let accounts = AccountManagement.data.accounts;
-    // let account: Account = _.find(
-    //   accounts,
-    //   (item: any) => item._email === email
-    // );
+    let account: Account = _.find(
+      accounts,
+      (item: any) => item._email === email
+    );
 
-    let account: Account | undefined = undefined;
-    for (let i = 0; i < accounts.length; i++) {
-      if (email == accounts[i]._email) {
-        account = accounts[i];
-      }
-    }
+    // let account: Account | undefined = undefined;
+    // for (let i = 0; i < accounts.length; i++) {
+    //   if (email == accounts[i]._email) {
+    //     account = accounts[i];
+    //   }
+    // }
     return account;
   }
 }

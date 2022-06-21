@@ -1,12 +1,10 @@
 import { RunUser } from "./../user/index";
-import { RunAdmin } from "./../admin/index";
+import { RunAdmin } from "../admin";
 import * as readline from "readline-sync";
 import { Account } from "./account";
 import { AccountManagement } from "./account-management";
 
 const accountManagement = new AccountManagement();
-const admin = new RunAdmin();
-const user = new RunUser();
 export class RunAccount {
   menu(): void {
     console.log(`
@@ -44,14 +42,11 @@ export class RunAccount {
     let newAccount = new Account(id, name, email, passWord, role);
     accountManagement.update(id, newAccount);
   }
-  logIn(): void {
+  logIn(): any {
     let email = readline.question("Nhap email:");
     let passWord = readline.question("Nhap mat khau:");
-    let isLogIn = accountManagement.logIn(email, passWord);
+    let login = accountManagement.logIn(email, passWord);
+    return login;
     // console.log("account", isLogIn);
-    // if (isLogIn._role === 1) {
-    //   admin.menu();
-    // }
-    // user.menu();
   }
 }
