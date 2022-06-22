@@ -1,0 +1,36 @@
+{
+  "staffs": [
+    {
+      "_id": "1",
+      "_name": "Admin",
+      "_email": "admin@gmail.com",
+      "_phone": "0975358805",
+      "_address": "Ha Noi",
+      "_idRoom": "ziufyd9ab3"
+    },
+    {
+      "_id": "lrfsc8lke3h",
+      "_name": "Nguyen Van A",
+      "_email": "nva@gmail.com",
+      "_phone": "0912345678",
+      "_address": "Ha Noi",
+      "_idRoom": "ziufyd9ab3"
+    },
+    {
+      "_id": "qj025je4ugr",
+      "_name": "Nguyen Van B",
+      "_email": "nvb@gmail.com",
+      "_phone": "0887654321",
+      "_address": "Da Nang",
+      "_idRoom": "ziufyd9cdf4"
+    },
+    {
+      "_id": "8fdpa6yclf3",
+      "_name": "Nguyen Van C",
+      "_email": "nvc@gmail.com",
+      "_phone": "0587654321",
+      "_address": "Ho Chi Minh",
+      "_idRoom": "ziufyd9deg5"
+    }
+  ]
+}

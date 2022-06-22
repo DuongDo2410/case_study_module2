@@ -1,7 +1,10 @@
+import { RunAccount } from "./account";
+import { RunStaff } from "./staff/index";
 import { RunRoom } from "./room/index";
 import * as readline from "readline-sync";
 const room = new RunRoom();
-
+const staff = new RunStaff();
+const account = new RunAccount();
 export class RunAdmin {
   menu(): void {
     console.log(`
@@ -19,8 +22,25 @@ export class RunAdmin {
       choice = +readline.question("Nhap lua chon cua ban:");
       switch (choice) {
         case 1:
+          console.log(
+            `======================================================== QUẢN LÝ PHÒNG BAN ========================================================`
+          );
           room.action();
           break;
+        case 2:
+          console.log(
+            `======================================================== QUẢN LÝ NHÂN VIÊN ========================================================`
+          );
+          staff.action();
+          break;
+        case 3:
+          console.log(
+            `======================================================== QUẢN LÝ TÀI KHOẢN ========================================================`
+          );
+          account.action();
+          break;
+        default:
+          console.log("Thao tác không đúng, mời chọn lại.");
       }
     } while (choice != 0);
   }

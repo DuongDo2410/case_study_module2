@@ -1,8 +1,7 @@
 {
   "rooms": [
-    { "_id": "ziufyd9ab3", "_name": "phòng IT" },
-    { "_id": "ziufyd9cdf4", "_name": "phòng Marketing" },
-    { "_id": "ziufyd9deg5", "_name": "phòng nhân sự" },
-    { "_id": "1syf9p9shg2", "_name": "room update" }
+    { "_id": "ziufyd9ab3", "_name": "Phong IT" },
+    { "_id": "ziufyd9cdf4", "_name": "Phong Marketing" },
+    { "_id": "ziufyd9deg5", "_name": "Phong nhan su" }
   ]
 }

@@ -2,18 +2,30 @@ import { Room } from "./room";
 const _ = require("lodash");
 const fs = require("fs");
 export class RoomManagenment {
-  private static data: any = JSON.parse(
+  private data: any = JSON.parse(
     fs.readFileSync("../database/room.json", {
       encoding: "utf8",
       flag: "r",
     })
   );
+
+  private static rooms: Room[] = [];
+
+  constructor() {
+    for (let item of this.data.rooms) {
+      let id = item._id;
+      let name = item._name;
+
+      const room = new Room(id, name);
+      RoomManagenment.rooms.push(room);
+    }
+  }
   getAll(): Room[] {
-    return RoomManagenment.data.rooms;
+    return RoomManagenment.rooms;
   }
 
   create(room: Room): void {
-    RoomManagenment.data.rooms = [...RoomManagenment.data.rooms, room];
+    RoomManagenment.rooms.push(room);
     this.writeFile();
   }
 
@@ -22,7 +34,7 @@ export class RoomManagenment {
     if (index == -1) {
       return false;
     }
-    RoomManagenment.data.rooms.splice(index, 1);
+    RoomManagenment.rooms.splice(index, 1);
     this.writeFile();
     return true;
   }
@@ -32,22 +44,28 @@ export class RoomManagenment {
     if (index == -1) {
       return false;
     }
-    RoomManagenment.data.rooms[index] = room;
+    RoomManagenment.rooms[index] = room;
     this.writeFile();
     return true;
   }
-
   findRoomById(id: string): number {
     let index = _.findIndex(
-      RoomManagenment.data.rooms,
-      (item: any) => item._id === id
+      RoomManagenment.rooms,
+      (item: Room) => item.id === id
     );
     return index;
   }
-  writeFile() {
-    fs.writeFileSync(
-      "../database/room.json",
-      JSON.stringify(RoomManagenment.data)
+  findRoomByName(name: string): any {
+    console.log("name", name);
+    let room = _.find(RoomManagenment.rooms, (item: Room) =>
+      item.name.toUpperCase().includes(name.toUpperCase())
     );
+    return room;
+  }
+  writeFile() {
+    let file = {
+      rooms: RoomManagenment.rooms,
+    };
+    fs.writeFileSync("../database/room.json", JSON.stringify(file));
   }
 }

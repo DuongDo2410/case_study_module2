@@ -7,11 +7,17 @@ export class RunRoom {
   menu(): void {
     console.log(`
         ================================================== Quản lý phòng ban ===================================================
-        ||                                                    1. Thêm mới                                                     ||
-        ||                                                    2. Cập nhật                                                     ||
-        ||                                                    3. xóa                                                          ||
+        ||                                                    1. Danh sách phòng                                              ||
+        ||                                                    2. Thêm mới                                                     ||
+        ||                                                    3. Cập nhật                                                     ||
+        ||                                                    4. Tìm kiếm                                                    ||
+        ||                                                    5. xóa                                                          ||
         ========================================================================================================================
         `);
+  }
+  getAll(): void {
+    let rooms = roomManagement.getAll();
+    console.table(rooms);
   }
   create(): void {
     let id = Math.random().toString(36).slice(2);
@@ -31,8 +37,12 @@ export class RunRoom {
     console.table(account);
     let name = readline.question("Nhap ten muon cap nhat:");
     let newRoom = new Room(id, name);
-    console.log("test", newRoom);
     roomManagement.update(id, newRoom);
+  }
+  findRoomByName(): void {
+    let name = readline.question("Nhap ten muon tim kiem:");
+    let valueSearch = roomManagement.findRoomByName(name);
+    console.log(valueSearch);
   }
   action() {
     let choice = -1;
@@ -42,17 +52,29 @@ export class RunRoom {
       switch (choice) {
         case 1:
           console.log(
+            `===================================================== DANH SÁCH PHÒNG ====================================================`
+          );
+          this.getAll();
+          break;
+        case 2:
+          console.log(
             `======================================================== THÊM MỚI ========================================================`
           );
           this.create();
           break;
-        case 2:
+        case 3:
           console.log(
             `======================================================== CẬP NHẬT ========================================================`
           );
           this.update();
           break;
-        case 3:
+        case 4:
+          console.log(
+            `======================================================== TÌM KIẾM PHÒNG ========================================================`
+          );
+          this.findRoomByName();
+          break;
+        case 6:
           console.log(
             `=========================================================== XÓA ===========================================================`
           );

@@ -1,26 +1,24 @@
-enum Role {
-  Admin = 1,
-  User = 2,
-}
-export class Account {
+export class Staff {
   private _id: string;
   private _name: string;
   private _email: string;
-  private _passWord: string;
-  private _role: Role;
-
+  private _phone: string;
+  private _address: string;
+  private _idRoom: string;
   constructor(
     id: string,
     name: string,
     email: string,
-    passWord: string,
-    role: Role
+    phone: string,
+    address: string,
+    idRoom: string
   ) {
     this._id = id;
     this._name = name;
     this._email = email;
-    this._passWord = passWord;
-    this._role = role;
+    this._phone = phone;
+    this._address = address;
+    this._idRoom = idRoom;
   }
 
   public get id(): string {
@@ -35,14 +33,16 @@ export class Account {
     return this._email;
   }
 
-  public get passWord(): string {
-    return this._passWord;
+  public get phone(): string {
+    return this._phone;
   }
 
-  public get role(): Role {
-    return this._role;
+  public get address(): string {
+    return this._address;
   }
-
+  public get idRoom(): string {
+    return this._idRoom;
+  }
   public set id(value: string) {
     this._id = value;
   }
@@ -55,15 +55,14 @@ export class Account {
     this._email = value;
   }
 
-  public set passWord(value: string) {
-    this._passWord = value;
+  public set phone(value: string) {
+    this._phone = value;
   }
 
-  public set role(value: Role) {
-    this._role = value;
+  public set address(value: string) {
+    this._address = value;
   }
-
-  public getEmail(): string {
-    return this._email;
+  public set idRoom(value: string) {
+    this._idRoom = value;
   }
 }
