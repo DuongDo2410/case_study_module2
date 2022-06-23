@@ -1,29 +1,10 @@
+import { Database } from "./database";
 import { Staff } from "./staff";
 const _ = require("lodash");
 const fs = require("fs");
-
+const data = new Database();
 export class StaffManagement {
-  private data: any = JSON.parse(
-    fs.readFileSync("../database/staff.json", {
-      encoding: "utf8",
-      flag: "r",
-    })
-  );
-
-  private static Staffs: Staff[] = [];
-
-  constructor() {
-    for (let item of this.data.staffs) {
-      let id = item._id;
-      let name = item._name;
-      let email = item._email;
-      let phone = item._phone;
-      let address = item._address;
-      let idRoom = item._idRoom;
-      const staff = new Staff(id, name, email, phone, address, idRoom);
-      StaffManagement.Staffs.push(staff);
-    }
-  }
+  private static Staffs: Staff[] = data.Staffs;
 
   getAll(): any {
     return StaffManagement.Staffs;

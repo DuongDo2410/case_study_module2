@@ -4,7 +4,6 @@ enum Role {
 }
 export class Account {
   private _id: string;
-  private _name: string;
   private _email: string;
   private _passWord: string;
   private _role: Role;
@@ -12,14 +11,12 @@ export class Account {
 
   constructor(
     id: string,
-    name: string,
     email: string,
     passWord: string,
     role: Role,
     idStaff: string
   ) {
     this._id = id;
-    this._name = name;
     this._email = email;
     this._passWord = passWord;
     this._role = role;
@@ -28,10 +25,6 @@ export class Account {
 
   public get id(): string {
     return this._id;
-  }
-
-  public get name(): string {
-    return this._name;
   }
 
   public get email(): string {
@@ -51,10 +44,6 @@ export class Account {
 
   public set id(value: string) {
     this._id = value;
-  }
-
-  public set name(value: string) {
-    this._name = value;
   }
 
   public set email(value: string) {

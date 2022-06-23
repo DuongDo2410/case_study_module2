@@ -1,29 +1,10 @@
 import { Account } from "./account";
+import { Database } from "./database";
 const _ = require("lodash");
 const fs = require("fs");
-
+const data = new Database();
 export class AccountManagement {
-  private data: any = JSON.parse(
-    fs.readFileSync("../database/account.json", {
-      encoding: "utf8",
-      flag: "r",
-    })
-  );
-
-  private static accounts: Account[] = [];
-
-  constructor() {
-    for (let item of this.data.accounts) {
-      let id = item._id;
-      let name = item._name;
-      let email = item._email;
-      let passWord = item._passWord;
-      let role = item._role;
-      let idStaff = item._idStaff;
-      const account = new Account(id, name, email, passWord, role, idStaff);
-      AccountManagement.accounts.push(account);
-    }
-  }
+  private static accounts: Account[] = data.account;
 
   getAll(): Account[] {
     return AccountManagement.accounts;
@@ -53,13 +34,16 @@ export class AccountManagement {
     this.writeFile();
     return true;
   }
-  logIn(email: string, passWord: string): any {
-    let account = this.findAccountByEmail(email);
-    if (email === account.email && passWord === account.passWord) {
-      return account;
+
+  logIn(email: string, passWord: string): Account | null {
+    for (let account of AccountManagement.accounts) {
+      if (email == account.email && passWord == account.passWord) {
+        return account;
+      }
     }
-    return undefined;
+    return null;
   }
+
   findAccountByEmail(email: string): Account {
     let accounts = AccountManagement.accounts;
     let account: Account = _.find(

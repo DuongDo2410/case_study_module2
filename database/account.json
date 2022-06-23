@@ -2,15 +2,6 @@
   "accounts": [
     {
       "_id": "1",
-      "_name": "ADMIN",
-      "_email": "admin@gmail.com",
-      "_passWord": "admin",
-      "_role": 1,
-      "_idStaff": "1"
-    },
-    {
-      "_id": "1",
-      "_name": "ADMIN",
       "_email": "admin@gmail.com",
       "_passWord": "admin",
       "_role": 1,
@@ -18,11 +9,24 @@
     },
     {
       "_id": "x9ey1l2162",
-      "_name": "a",
-      "_email": "a",
-      "_passWord": "a",
+      "_email": "nva@gmail.com",
+      "_passWord": "1",
       "_role": 0,
-      "_idStaff": "a"
+      "_idStaff": "lrfsc8lke3h"
+    },
+    {
+      "_id": "asc08qqc2tv",
+      "_email": "nbv@gmail.com",
+      "_passWord": "1",
+      "_role": 0,
+      "_idStaff": "qj025je4ugr"
+    },
+    {
+      "_id": "r7glj5ukhg",
+      "_email": "a@gmail.com",
+      "_passWord": "Aa1bcd",
+      "_role": 0,
+      "_idStaff": "qj025je4ugr"
     }
   ]
 }

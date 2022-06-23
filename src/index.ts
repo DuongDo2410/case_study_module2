@@ -1,13 +1,13 @@
+import { RunAccount } from "./admin/account";
 import { RunUser } from "./user/index";
 import { RunAdmin } from "./admin";
-import { AccountManagement } from "./admin/account/account-management";
 import * as readline from "readline-sync";
-import { Account } from "./admin/account/account";
-
+import { AccountManagement } from "./admin/account/account-management";
 const accountManagement = new AccountManagement();
+
 const admin = new RunAdmin();
 const user = new RunUser();
-
+const account = new RunAccount();
 let choice = -1;
 do {
   menu();
@@ -23,7 +23,7 @@ do {
       console.log(
         `======================================================== ĐĂNG KÝ ==========================================================`
       );
-      // create();
+      account.create();
       break;
   }
 } while (choice != 0);
@@ -33,30 +33,22 @@ function menu(): void {
   ================================================== Mời chọn chức năng ==================================================
   ||                                                    1. Đăng nhập                                                    ||
   ||                                                    2. Đăng ký                                                      ||
+  ||                                                    0. Thoát                                                        ||
   ========================================================================================================================
   `);
 }
-function Authentication(): any {
-  let isLogIn = logIn();
-  if (isLogIn.role === 1) {
-    return admin.action();
-  }
-  return user.action();
-}
-function logIn(): any {
+
+function Authentication() {
   let email = readline.question("Nhap email:");
   let passWord = readline.question("Nhap mat khau:");
   let login = accountManagement.logIn(email, passWord);
-  return login;
+  if (login) {
+    console.log("Đăng nhập thành công.");
+    if (login.role === 1) {
+      admin.action();
+    }
+    user.action();
+  } else {
+    console.log("Sai email hoặc mật khẩu");
+  }
 }
-// function create(): void {
-//   let id = Math.random().toString(36).slice(2);
-//   let name = readline.question("Nhap ten:");
-//   let email = readline.question("Nhap email:");
-//   let passWord = readline.question("Nhap mat khau:");
-//   let role = 0;
-//   let idStaff = readline.question("Nhap id nhan vien muon cap nhat:");
-
-//   const account = new Account(id, name, email, passWord, role, idStaff);
-//   accountManagement.create(account);
-// }
