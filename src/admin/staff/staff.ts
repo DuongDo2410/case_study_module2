@@ -65,4 +65,5 @@ export class Staff {
   public set idRoom(value: string) {
     this._idRoom = value;
   }
+  // abstract payroll(): number;
 }

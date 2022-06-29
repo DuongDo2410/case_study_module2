@@ -1,7 +1,7 @@
 {
   "rooms": [
-    { "_id": "ziufyd9ab3", "_name": "Phong IT" },
     { "_id": "ziufyd9cdf4", "_name": "Phong Marketing" },
-    { "_id": "ziufyd9deg5", "_name": "Phong nhan su" }
+    { "_id": "ziufyd9deg5", "_name": "Phong nhan su" },
+    { "_id": "rznwqw08y8e", "_name": "Phong IT" }
   ]
 }

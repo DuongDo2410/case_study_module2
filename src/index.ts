@@ -39,15 +39,16 @@ function menu(): void {
 }
 
 function Authentication() {
-  let email = readline.question("Nhap email:");
-  let passWord = readline.question("Nhap mat khau:");
-  let login = accountManagement.logIn(email, passWord);
+  // let email = readline.question("Nhap email:");
+  // let passWord = readline.question("Nhap mat khau:");
+  // let login = accountManagement.logIn(email, passWord);
+  let login = account.logIn();
   if (login) {
     console.log("Đăng nhập thành công.");
     if (login.role === 1) {
-      admin.action();
+      return admin.action();
     }
-    user.action();
+    return user.action(login);
   } else {
     console.log("Sai email hoặc mật khẩu");
   }

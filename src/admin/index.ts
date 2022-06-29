@@ -18,10 +18,10 @@ export class RunAdmin {
     ================================================================================================================================
     `);
   }
-  // showAccount() {
-  //   let acc = account.logIn();
-  //   console.log(acc);
-  // }
+  showAccount() {
+    let acc = account.logIn();
+    console.log(acc);
+  }
   action() {
     let choice = -1;
     do {
@@ -50,7 +50,7 @@ export class RunAdmin {
           console.log(
             `======================================================== THÔNG TIN TÀI KHOẢN ========================================================`
           );
-          // this.showAccount();
+          this.showAccount();
           break;
         default:
           console.log("Thao tác không đúng, mời chọn lại.");

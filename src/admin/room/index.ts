@@ -1,8 +1,10 @@
+import { StaffManagement } from "./../staff/staff-management";
 import * as readline from "readline-sync";
 import { Room } from "./room";
 import { RoomManagenment } from "./room-managenment";
 
 const roomManagement = new RoomManagenment();
+const Staffmanagement = new StaffManagement();
 export class RunRoom {
   menu(): void {
     console.log(`
@@ -27,7 +29,15 @@ export class RunRoom {
   }
   remove(): void {
     let id = readline.question("Nhap id muon xoa:");
-    roomManagement.remove(id);
+    for (const item of Staffmanagement.getAll()) {
+      if (item.idRoom == id) {
+        console.log("Không thể xóa phòng ban khi còn nhân viên");
+        break;
+      } else {
+        roomManagement.remove(id);
+        break;
+      }
+    }
   }
   update(): void {
     let id = readline.question("Nhap id muon cap nhat:");
@@ -74,7 +84,7 @@ export class RunRoom {
           );
           this.findRoomByName();
           break;
-        case 6:
+        case 5:
           console.log(
             `=========================================================== XÓA ===========================================================`
           );

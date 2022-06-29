@@ -73,15 +73,13 @@ export class RunAccount {
     let searchvalue = accountManagement.findAccountByEmail(email);
     console.log(searchvalue);
   }
-  // logIn(): Account | null {
-  //   let email = readline.question("Nhap email:");
-  //   let passWord = readline.question("Nhap mat khau:");
-  //   let login = accountManagement.logIn(email, passWord);
-  //   if (login) {
-  //     return login;
-  //   }
-  //   return null;
-  // }
+  logIn(): Account | null {
+    let email = readline.question("Nhap email:");
+    let passWord = readline.question("Nhap mat khau:");
+    let login = accountManagement.logIn(email, passWord);
+
+    return login;
+  }
 
   action() {
     let choice = -1;

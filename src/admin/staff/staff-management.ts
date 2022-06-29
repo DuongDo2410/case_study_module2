@@ -42,6 +42,14 @@ export class StaffManagement {
     );
     return index;
   }
+
+  findStaffByIds(id: string): Staff {
+    let staff: Staff = _.find(
+      StaffManagement.Staffs,
+      (item: Staff) => item.id === id
+    );
+    return staff;
+  }
   findStaffByName(name: string): any {
     let staff = _.find(StaffManagement.Staffs, (item: Staff) =>
       item.name.toUpperCase().includes(name.toUpperCase())
